@@ -11,6 +11,6 @@ import com.stockmonitor.entity.Account;
 @RepositoryRestResource(collectionResourceRel = "accounts", path = "accounts")
 public interface AccountRepository extends JpaRepository<Account, Long> {
 
-	List<Account> findByEmail(@Param("name") String email);
+	List<Account> findByAccountEmail(@Param("accountEmail") String accountEmail);
 
 }
