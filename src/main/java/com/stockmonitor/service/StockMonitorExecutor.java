@@ -6,12 +6,16 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
-public class StockMonitorService {
+public class StockMonitorExecutor {
 
-    private static final Logger log = LoggerFactory.getLogger(StockMonitorService.class);
+    private static final Logger log = LoggerFactory.getLogger(StockMonitorExecutor.class);
 
+    private int OperationsLimit
+    
     @Scheduled(fixedRate = 5000)
     public void reportCurrentTime() {
-        log.info("checking stock prices");
+        
+    	
+    	log.info("checking stock prices");
     }
 }
