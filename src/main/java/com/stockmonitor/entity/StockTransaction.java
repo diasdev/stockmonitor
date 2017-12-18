@@ -28,6 +28,12 @@ public class StockTransaction {
 	@Column(name="stock_price")
     private BigDecimal stockPrice;
 	
+	@Column(name="stock__amount_traded")
+    private int stockAmountTraded;
+	
+	@Column(name="currency_amount_traded")
+    private BigDecimal currencyAmountTraded;
+	
 	@Column(name="operation")
     private StockOperation operation;
 
@@ -39,34 +45,48 @@ public class StockTransaction {
 		return accountEmail;
 	}
 
-	public void setAccountEmail(String accountEmail) {
-		this.accountEmail = accountEmail;
+	public void setAccountEmail(String value) {
+		this.accountEmail = value;
 	}
 	
 	public String getCompanyCode() {
 		return companyCode;
 	}
 
-	public void setCompanyCode(String companyCode) {
-		this.companyCode = companyCode;
+	public void setCompanyCode(String value) {
+		this.companyCode = value;
 	}
 	
 	public StockOperation getOperation() {
 		return operation;
 	}
 
-	public void setOperation(StockOperation operation) {
-		this.operation = operation;
+	public void setOperation(StockOperation value) {
+		this.operation = value;
 	}
 
 	public BigDecimal getStockPrice() {
 		return stockPrice;
 	}
 
-	public void setStockPrice(BigDecimal stockPrice) {
-		this.stockPrice = stockPrice;
+	public void setStockPrice(BigDecimal value) {
+		this.stockPrice = value;
 	}
 
-	
+	public int getStockAmountTraded() {
+		return stockAmountTraded;
+	}
+
+	public void setStockAmountTraded(int value) {
+		this.stockAmountTraded = value;
+	}
+
+	public BigDecimal getCurrencyAmountTraded() {
+		return currencyAmountTraded;
+	}
+
+	public void setCurrencyAmountTraded(BigDecimal value) {
+		this.currencyAmountTraded = value;
+	}
     
 }
