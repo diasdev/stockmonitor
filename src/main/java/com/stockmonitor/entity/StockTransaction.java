@@ -1,10 +1,14 @@
 package com.stockmonitor.entity;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.stockmonitor.util.StockOperation;
 
 @Entity
 @Table(name = "STOCK_TRANSACTION")
@@ -13,20 +17,24 @@ public class StockTransaction {
 	@Id
     @GeneratedValue
     @Column(name = "ID")
-	private int ID;
+	private long ID;
 	
-	@Column(name="account_email", unique = true)
+	@Column(name="account_email")
 	private String accountEmail;
 	
-	@Column(name="company_code", unique = true)
+	@Column(name="company_code")
 	private String companyCode;
 	
 	@Column(name="stock_price")
-    private Double stockPrice;
+    private BigDecimal stockPrice;
 	
 	@Column(name="operation")
     private StockOperation operation;
 
+	public long getID() {
+		return this.ID;
+	}
+	
 	public String getAccountEmail() {
 		return accountEmail;
 	}
@@ -51,11 +59,11 @@ public class StockTransaction {
 		this.operation = operation;
 	}
 
-	public Double getStockPrice() {
+	public BigDecimal getStockPrice() {
 		return stockPrice;
 	}
 
-	public void setStockPrice(Double stockPrice) {
+	public void setStockPrice(BigDecimal stockPrice) {
 		this.stockPrice = stockPrice;
 	}
 

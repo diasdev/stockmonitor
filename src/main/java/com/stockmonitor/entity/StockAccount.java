@@ -1,5 +1,7 @@
 package com.stockmonitor.entity;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,17 +29,15 @@ public class StockAccount {
     @JoinColumn(name = "company_code")
     private Company company;
 
-    @Column
+    @Column(name = "buying_price")
+    private BigDecimal buyingPrice;
+    
+    @Column(name = "selling_price")
+    private BigDecimal sellingPrice;
+    
+    @Column(name = "stock_amount")
     private int stockAmount;
 
-    public int getID() {
-    	return this.ID;
-    }
-    
-    public void setID(int ID) {
-    	this.ID = ID;
-    }
-    
 	public Account getAccount() {
 		return account;
 	}
@@ -52,6 +52,23 @@ public class StockAccount {
 
 	public void setCompany(Company company) {
 		this.company = company;
+	}
+	
+	
+	public BigDecimal getBuyingPrice() {
+		return buyingPrice;
+	}
+
+	public void setBuyingPrice(BigDecimal value) {
+		this.buyingPrice = value;
+	}
+
+	public BigDecimal getSellingPrice() {
+		return sellingPrice;
+	}
+
+	public void setSellingPrice(BigDecimal value) {
+		this.sellingPrice = value;
 	}
 
 	public int getStockAmount() {

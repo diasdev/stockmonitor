@@ -1,5 +1,6 @@
 package com.stockmonitor.entity;
 
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,7 +19,7 @@ public class Account {
 	private String accountEmail;
 	
 	@Column
-	private Double balance;
+	private BigDecimal balance;
 	
 	@OneToMany(mappedBy = "account")
 	private Set<StockAccount> stockAccount = new HashSet<StockAccount>();
@@ -31,11 +32,11 @@ public class Account {
 		this.accountEmail = accountEmail;
 	}
 
-	public Double getBalance() {
+	public BigDecimal getBalance() {
 		return balance;
 	}
 
-	public void setBalance(Double balance) {
+	public void setBalance(BigDecimal balance) {
 		this.balance = balance;
 	}
 
