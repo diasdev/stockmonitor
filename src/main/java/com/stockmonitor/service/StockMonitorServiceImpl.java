@@ -18,7 +18,7 @@ public class StockMonitorServiceImpl implements StockMonitorService {
 	private StockReaderService stockReader;
 	
 	@Autowired
-	private StockAccountRepository stockAccountRepo;
+	private StockAccountService stockAccountService;
 	
 	@Autowired
 	private TransactionService transactionService;
@@ -26,7 +26,7 @@ public class StockMonitorServiceImpl implements StockMonitorService {
     public void EvaluateStockPrices() {
     	List<StockPrice> stockPrices = stockReader.getStockPrices();
     	
-    	List<StockAccount> stockMonitorings = stockAccountRepo.findAll();
+    	List<StockAccount> stockMonitorings = stockAccountService.getAllStockAccount();
 
     	for (StockPrice sp:stockPrices) {
 

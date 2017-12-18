@@ -3,10 +3,12 @@ package com.stockmonitor.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.stockmonitor.entity.StockAccount;
 import com.stockmonitor.repository.StockAccountRepository;
 
+@Component
 public class StockAccountServiceImpl implements StockAccountService {
 
 	@Autowired
