@@ -12,11 +12,11 @@ O framework utilizado é o Spring Boot, juntamente com outas dependências. Seu 
 
 Spring Data REST cria automaticamente endpoints REST e controllers para inserção, exclusão e atualização de registros a partir dos repositórios JPA (Jparepository) anotados com @RepositoryRestResource.
 
-Acessando http://localhost:8080 é retornado um texto em formado JSON com os endereços para acessar as entidades.
+Acessando localhost:8080 é retornado um texto em formado JSON com os endereços para acessar as entidades.
 
 Para verificar os endpoints, basta usar um cliente REST como no exemplo da imagem a seguir, onde é adicionada uma conta.
 
-(stockmonitor/src/main/resources/documentation/images/rest_endpoint.png)
+[REST Client](stockmonitor/src/main/resources/documentation/images/rest_endpoint.png)
 
 ## Design
 
