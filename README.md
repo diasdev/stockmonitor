@@ -45,5 +45,13 @@ Assim como o número de transações para gerar um relatório (stockmonitor.repo
 
 - serviço de notificação por email.
 - testes unitários com mocks do serviço de geração de preços randômicos.
+Basicamente é o único serviço com possibilidade de teste unitário, como explicado abaixo.
+
+-teste de integração
+Não é possível fazer mock dos repositórios JPA. De acordo com um membro do time do Spring Framework:
+o make it short - there's no way to unit test Spring Data JPA repositories reasonably for a simple reason: it's way to cumbersome to mock all the parts of the JPA API we invoke to bootstrap the repositories. Unit tests don't make too much sense here anyway, as you're usually not writing any implementation code yourself so that integration testing is the most reasonable approach.
+
+Testes de integração são indicados.
+
 - criação de uma camada de negócio (BOs), contendo as implementações específicas para as operações de venda e compra, e uma interface (Tradable, por ex) para estipular o contrato entre essas classes e o serviço de transação.
 - Manter a geração de relatório a cada passagem pelo limite definido em stockmonitor.report.threshold, e não apenas na primeira passagem.
