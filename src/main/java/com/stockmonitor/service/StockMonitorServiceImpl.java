@@ -40,7 +40,7 @@ public class StockMonitorServiceImpl implements StockMonitorService {
     		//find buyers for this stock (i.e. current price is less than or equal to my buying price
     		List<StockAccount> buyers = stockMonitorings.stream()
 														.filter(sm ->	sm.getCompany().getCompanyCode() == sp.getCompanyCode() &&
-																		sp.getPrice().compareTo(sm.getSellingPrice()) <= 0 )
+																		sp.getPrice().compareTo(sm.getBuyingPrice()) <= 0 )
 														.collect(Collectors.toList());
     		buyStocks(buyers, sp.getPrice());
     	}
