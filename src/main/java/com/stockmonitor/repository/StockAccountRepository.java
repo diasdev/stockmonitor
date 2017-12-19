@@ -5,7 +5,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.stockmonitor.entity.StockAccount;
 
-@RepositoryRestResource(collectionResourceRel = "transactions", path = "transactions")
+@RepositoryRestResource(collectionResourceRel = "monitorings", path = "monitorings")
 public interface StockAccountRepository extends JpaRepository<StockAccount, Long> {
 
 }

@@ -8,7 +8,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.stockmonitor.entity.StockTransaction;
 
-@RepositoryRestResource(collectionResourceRel = "accounts", path = "accounts")
+@RepositoryRestResource(collectionResourceRel = "transactions", path = "transactions")
 public interface TransactionRepository extends JpaRepository<StockTransaction, Long> {
 
 }

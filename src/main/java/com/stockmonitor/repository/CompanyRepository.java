@@ -11,6 +11,4 @@ import com.stockmonitor.entity.Company;
 @RepositoryRestResource(collectionResourceRel = "companies", path = "companies")
 public interface CompanyRepository extends JpaRepository<Company, String> {
 
-	List<Company> findByCompanyCode(@Param("companyCode") String companyCode);
-
 }
