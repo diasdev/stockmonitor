@@ -1,5 +1,11 @@
 # stockmonitor
 
+## Executando a aplicação
+
+- clonar este repositório.
+- verificar as propriedade em application.properties e alterá-las de necessário.
+- na raíz do projeto, executar comando mvn spring-boot:run
+
 ## Framework
 
 ### Spring Boot
@@ -17,6 +23,13 @@ Acessando localhost:8080 é retornado um texto em formado JSON com os endereços
 Para verificar os endpoints, basta usar um cliente REST como no exemplo da imagem a seguir, onde é adicionada uma conta.
 
 [REST Client](https://github.com/diasdev/stockmonitor/blob/master/src/main/resources/documentation/images/rest_endpoint.png)
+
+## Banco de dados e persistência
+
+### H2 e JPA/Hibernate
+
+Para facilitar a criação e testes, foi utilizado o banco embarcado H2 configurado para persistir os dados em arquivo.
+A configuração atual para a propriedade **_ddl-auto_** é **_create_**. A base é recriada a cada inicialização da aplicação, ocasição onde o script data-h2.sql é executado para popular a base. Isso pode ser facilmante alterado para *ddl-auto=update*.
 
 ## Design
 
