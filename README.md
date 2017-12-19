@@ -16,7 +16,7 @@ Acessando localhost:8080 é retornado um texto em formado JSON com os endereços
 
 Para verificar os endpoints, basta usar um cliente REST como no exemplo da imagem a seguir, onde é adicionada uma conta.
 
-[REST Client](https://github.com/diasdev/stockmonitor/src/main/resources/documentation/images/rest_endpoint.png)
+[REST Client](https://github.com/diasdev/stockmonitor/blob/master/src/main/resources/documentation/images/rest_endpoint.png)
 
 ## Design
 
