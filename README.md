@@ -18,8 +18,6 @@ Para verificar os endpoints, basta usar um cliente REST como no exemplo da image
 
 [REST Client](https://github.com/diasdev/stockmonitor/src/main/resources/documentation/images/rest_endpoint.png)
 
-[[https://github.com/diasdev/stockmonitor/src/main/resources/documentation/images/rest_endpoint.png|alt=REST]]
-
 ## Design
 
 As classes foram separados, ao máximo, por especialidades, e injetadas nas interfaces de seus dependentes através do mecanismo de DI do Spring.
