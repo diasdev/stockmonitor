@@ -43,6 +43,8 @@ Assim como o número de transações para gerar um relatório (stockmonitor.repo
 
 ## melhorias necessárias
 
+- refatoração do serviço de transações. Esse serviço deveria ser apenas proxy para o repositório JPA (e assim tornar-se apto a ser mockado). Refatorar a lógica de transações para uma classe de negócio e criar um novo package para essas classes de BO.
+
 - serviço de notificação por email.
 - testes unitários com mocks do serviço de geração de preços randômicos.
 Basicamente é o único serviço com possibilidade de teste unitário, como explicado abaixo.
@@ -52,6 +54,8 @@ Não é possível fazer mock dos repositórios JPA. De acordo com um membro do t
 o make it short - there's no way to unit test Spring Data JPA repositories reasonably for a simple reason: it's way to cumbersome to mock all the parts of the JPA API we invoke to bootstrap the repositories. Unit tests don't make too much sense here anyway, as you're usually not writing any implementation code yourself so that integration testing is the most reasonable approach.
 
 Testes de integração são indicados.
+
+**_nota_**: já há alguns serviços intermediários entre os componentes de negócio e os repositórios. Para criar testes unitários, seria preciso terminar esses serviços, expondo judiciosamente os métodos necessários da interface dos repositórios, assim é possível fazer mock desses serviços ao invés dos repositórios.
 
 - criação de uma camada de negócio (BOs), contendo as implementações específicas para as operações de venda e compra, e uma interface (Tradable, por ex) para estipular o contrato entre essas classes e o serviço de transação.
 - Manter a geração de relatório a cada passagem pelo limite definido em stockmonitor.report.threshold, e não apenas na primeira passagem.
